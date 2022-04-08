@@ -39,6 +39,7 @@
     div#mainPage{        
         position: absolute;
         align-self: center;
+        box-sizing: border-box;
         width: 1020px;
         left: 50%;        
         transform: translate(-50%);               
