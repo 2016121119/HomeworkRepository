@@ -1,0 +1,226 @@
+@media screen and (max-width:480px){
+    .mainPage{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;    
+        position: absolute;
+        align-self: center;
+        box-sizing: border-box;
+        width: 100%;
+        left: 50%;        
+        transform: translate(-50%);             
+    }
+
+    #navBar{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .showWindow{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;             
+    }
+
+    #displayBox{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
+    .imgBox{
+        height: 200px;
+        border: 1px solid black;
+        box-sizing: border-box;
+    }
+
+    .imgBox img{
+        margin: 5px;
+        width: 80%;
+        height: 80%;
+        vertical-align: middle;
+    }
+    
+    .subTitle{
+        border-bottom: 1px solid black;
+        flex: 100%;
+        max-width: 100%;
+    }
+
+}
+@media screen and (min-width:481px) and (max-width:800px){
+    .mainPage{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;    
+        position: absolute;
+        align-self: center;
+        box-sizing: border-box;
+        width: 100%;
+        left: 50%;        
+        transform: translate(-50%);               
+    }
+
+    #navBar{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .showWindow{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;             
+    }
+
+    #displayBox{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }   
+    
+    .imgBox{
+        flex: 50%;
+        width: 50%;             
+        height: 300px;
+        border: 1px solid black;
+        box-sizing: border-box;
+    }
+
+    .imgBox img{        
+        margin: 5px;
+        width: 40%;
+        height: 40%;
+        vertical-align: middle;
+    }
+    
+    .subTitle{
+        border-bottom: 1px solid black;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+@media screen and (min-width:801px){
+    .mainPage{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;    
+        position: absolute;
+        align-self: center;
+        box-sizing: border-box;
+        width: 1020px;
+        left: 50%;        
+        transform: translate(-50%);              
+    }
+
+    #navBar{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: right;
+    }
+
+    .showWindow{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;              
+    }
+
+    #displayBox{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .imgBox{
+        flex: 25%;
+        max-width: 25%;
+        height: 300px;
+        border: 1px solid black;
+        box-sizing: border-box;
+    }
+
+    .imgBox img{
+        margin: 5px;
+        width: 40%;
+        height: 40%;
+        vertical-align: middle;
+    }
+    
+    .subTitle{
+        border-bottom: 1px solid black;
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    #introductionBox{
+        column-count: 2;
+        column-gap: 30px;
+        column-rule: 1px outset black;
+    }
+
+}
+    h1{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 30px;
+        text-align: center;
+    }
+    .button{
+        border-top: 3px solid black;
+        border-bottom: 3px solid black;
+    }
+    
+    .submitBtnSet{
+        padding: 5px;
+    }
+    
+    .greenbtn{    
+        background-color: royalblue;
+        color: white;
+        width: 150px;
+        height: fit-content;
+        margin: 1px;
+    }
+    
+    .redbtn{    
+        background-color: red;
+        color: white;
+        width: 150px;
+        height: fit-content;
+        margin: 1px;
+    }
+    
+    .loginLink{
+        border-top: 2px solid red;
+        border-bottom: 2px solid red;
+        padding: .1em;
+        margin: 1px;
+    }   
+
+    h1#Header{    
+        animation: sliding linear 2s 1s 1 normal;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    @keyframes sliding {
+        from{opacity: 0; margin-left: 100%;}
+        to{opacity: 1; margin-left: 0px;}
+    }
+    
+    #Links{
+        text-align: right;
+    }
+
+    .navItem{
+        margin-left: 10px;
+    }
+    
+
+
+
+
+
