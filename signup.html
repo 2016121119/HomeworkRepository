@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>singup</title>
+        <link rel="stylesheet" type="text/css" href="main.css"/>
+    </head>
+    <body>
+        <h1>Welcome to INTERNET-PROGRAMMING SHOP</h1>        
+        <p><span class="loginLink"><a href="login.html">Login Page</a></span> 
+            <span>Sign-up Page</span></p>
+        <p><input type="hidden"/></p>
+        <p><form method="post" action="https://www.example.com">
+            <div>
+                <p>개인정보(* 표시는 필수 입력사항입니다)</p>
+            <p><label>*이름: 
+                <input type="text" name="name" size="30" maxlength="35" placeholder="이름을 입력하세요" autofocus required/>    
+            </label></p>
+            <p><label>생년월일: 
+                <input type="date" name="birth"/>
+            </label></p>
+            <p>성별: 
+            <label>남
+                <input type="radio" name="sex" value="Male"/>
+            </label>
+            <label>여
+                <input type="radio" name="sex" value="Female"/>
+            </label></p>
+            <p><label>Age: 
+                <input type="number" name="age" min="14" max="100" step="1"/>
+            </label>
+            <p><label>*E-mail: 
+                <input type="email" name="email" placeholder="email@domain.com" required/>
+            </label>          
+            </p>
+            <p><label>*Password: </label>
+                <input type="password" name="password" required/>
+            </p>
+            <p><label>*Telephone: 
+                <input type="tel" name="tel" placeholder="(###) ###-####" pattern="\(\d{3}\) \d{3}-\d{4}" required/>
+            </label></p>
+            <p class="submitBtnSet">
+                <input class="greenbtn"type="submit" name="submit" value="Sing Up"/>
+                <input class="redbtn" type="reset" name="reset" value="Clear"/>
+            </p>
+            </div>
+            
+        </form></p>
+
+    </body>
+</html>

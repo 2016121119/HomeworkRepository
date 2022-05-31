@@ -1,0 +1,56 @@
+#mainPage{
+    text-align: center;
+    box-sizing: border-box;
+    width: 1020px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);    
+}
+
+#navLinks{
+    border-bottom: 2px solid blue;
+}
+
+#mainContainer{
+    
+    height: 500px;
+}
+
+#searchBar{
+    
+    float: left;
+    width: 30%;
+    box-sizing: border-box;
+}
+
+#itemBox{
+    
+    float: left;
+    width: 70%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+.imgBox{
+    border: 1px solid black;
+    width: 49%;
+    height: 300px; 
+    overflow: hidden;  
+}
+
+.onClicked{
+    border: 1px solid black;
+    width: 49%;
+    height: 300px; 
+    overflow: hidden;  
+}
+
+.imgBox img{
+    display: block;
+    width: 70%;
+    height: 70%;
+}

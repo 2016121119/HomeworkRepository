@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IP E-Commerce Shop</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="main.css">
+
+    </head>
+    <body id="mainPage">
+        <div>
+            <u><h1>Welcome to IP E-Commerce Shop!</h1></u>
+        </div>
+        <div id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="signup.html">SignUp</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="mainContainer">
+            <div id="searchBar">
+                <p>
+                    <label>Filter:
+                        <input type="text" id="productList" name="productFilter" list="products" placeholder="All"/>
+                        <datalist id="products">
+                            <option value="All">
+                            <option value="Ball">
+                            <option value="Jersey">
+                            <option value="Shoes">    
+                        </datalist>
+                    </label>                    
+                    <button id="tagsubmit">Enter</button>
+                </p>
+                <p>
+                    <label>Keyword: 
+                        <input type="text" id="keywordList" name="keywordSearching" placeholder="Enter a keyword"/>
+                    </label>
+                    <button id="keywordsubmit">Enter</button>
+                </p>
+                <p>
+                    <div id="tmp"></div>
+                </p>
+            </div>
+            <div id="itemBox"></div>
+        </div>  
+    </body>
+    <script>        
+        let jsonFile;
+        let cnt=0;
+        let tagName;
+        let keyword;
+        
+        function loadData(){
+            fetch("./product.json")
+            .then(response=>response.json())
+            .then(data=>showItems(data));
+        }
+        loadData();
+
+        function showItems(data){
+                var container = document.getElementById("itemBox");            
+                for(let i=0;i<6;i++){                       
+                    var div = document.createElement("div");
+                    var img = data[i].itemImg;                                               
+                    div.className = "imgBox";
+                    div.innerHTML = "<img src= "+img+">";
+                    container.appendChild(div);
+                    div.onclick = function(){                    
+                        this.innerHTML += "["+data[i].itemName+"] price: "+data[i].price;                        
+                    }
+                    div.onmouseout = function(){                        
+                        this.innerHTML = "<img src= "+data[i].itemImg+">";
+                    }  
+                    
+                    cnt++;
+                                
+                }
+            //infinite scroll
+            window.onscroll = function(e){
+                if((window.innerHeight + window.scrollY) >= document.body.offsetHeight){
+                    fetch("./product.json")
+                    .then(response=>response.json())
+                    .then(data=>{
+                        if(cnt>=data.length){
+                            return;
+                        }
+                        else{                            
+                            var container = document.getElementById("itemBox");
+                            var div = document.createElement("div");
+                            var img = data[cnt].itemImg;
+                            var name = data[cnt].itemName;
+                            var price = data[cnt].price;                                               
+                            div.className = "imgBox";
+                            div.innerHTML = "<img src= "+img+">";
+                            container.appendChild(div);                            
+                            div.onclick = function(){                    
+                                this.innerHTML += "["+name+"] price: "+price;                        
+                            }
+                            div.onmouseout = function(){                        
+                                this.innerHTML = "<img src= "+img+">";
+                            }                                
+                            cnt++;   
+                        }
+                    });                    
+                }                 
+            }   
+        }
+
+                    //filtering
+        let tagBtn = document.getElementById("tagsubmit");            
+        tagBtn.onclick = function(){ 
+            cnt=0;
+            tagName = document.getElementById("productList").value;
+            let element = document.getElementById("itemBox");
+            while(element.firstChild){
+                element.removeChild(element.firstChild);
+            }            
+            fetch("./product.json")
+            .then(response=>response.json())
+            .then(data=>dataFiltered(data));
+        }
+        
+        function dataFiltered(data){
+            let container = document.getElementById("itemBox");
+            for(let i=0;i<data.length;i++){
+                    if(tagName=="All"||tagName==""){
+                        loadData();
+                        return;                                              
+                    }else{
+                        if(data[i].tag==tagName&&cnt<6){
+                            var div = document.createElement("div");
+                            var img = data[i].itemImg;                                  
+                            div.className = "imgBox";
+                            div.innerHTML = "<img src= "+img+">";
+                            container.appendChild(div);
+                            cnt++;
+                            div.onclick = function(){                    
+                                this.innerHTML += "["+data[i].itemName+"] price: "+data[i].price;                        
+                            }
+                            div.onmouseout = function(){                        
+                                this.innerHTML = "<img src= "+data[i].itemImg+">";
+                            }                          
+                    }                                            
+                }                                              
+            }
+            window.onscroll = function(e){
+                if((window.innerHeight + window.scrollY) >= document.body.offsetHeight){
+                    fetch("./product.json")
+                    .then(response=>response.json())
+                    .then(data=>{
+                        if(cnt>=data.length){
+                            return;
+                        }
+                        else{
+                            if(cnt<6){
+                                onscroll.cancelBubble=true;
+                                return;
+                            }else{
+                                if(data[cnt].tag==tagName){
+                                    var container = document.getElementById("itemBox");
+                                    var div = document.createElement("div");
+                                    var img = data[cnt].itemImg;
+                                    var name = data[cnt].itemName;
+                                    var price = data[cnt].price;                                               
+                                    div.className = "imgBox";
+                                    div.innerHTML = "<img src= "+img+">";
+                                    container.appendChild(div);                            
+                                    div.onclick = function(){                    
+                                        this.innerHTML += "["+name+"] price: "+price;                        
+                                    }
+                                    div.onmouseout = function(){                        
+                                        this.innerHTML = "<img src= "+img+">";
+                                    }                                
+                                    cnt++; 
+                                }
+                            
+                            }                        
+                        }
+                    });                    
+                }                 
+            }        
+        }
+
+        let keywordBtn = document.getElementById("keywordsubmit");
+        keywordBtn.onclick = function(){
+            cnt=0;
+            keyword = document.getElementById("keywordList").value;
+            let element = document.getElementById("itemBox");
+            while(element.firstChild){
+                element.removeChild(element.firstChild);
+            }            
+            fetch("./product.json")
+            .then(response=>response.json())
+            .then(data=>dataByKeyword(data));
+        }
+
+        function dataByKeyword(data){
+            let container = document.getElementById("itemBox");
+            for(let i=0;i<data.length;i++){
+                    if(keyword==""||keyword=="All"){
+                        loadData();
+                        return; 
+                    }else{
+                        if(data[i].keyword==keyword&&cnt<6){
+                            var div = document.createElement("div");
+                            var img = data[i].itemImg;                                  
+                            div.className = "imgBox";
+                            div.innerHTML = "<img src= "+img+">";
+                            container.appendChild(div);
+                            cnt++;
+                            div.onclick = function(){                    
+                                this.innerHTML += "["+data[i].itemName+"] price: "+data[i].price;
+                            }
+                            div.onmouseout = function(){                        
+                                this.innerHTML = "<img src= "+data[i].itemImg+">";
+                            }                                                        
+                        }    
+                    }                                              
+            }
+            window.onscroll = function(e){
+                if((window.innerHeight + window.scrollY) >= document.body.offsetHeight){
+                    fetch("./product.json")
+                    .then(response=>response.json())
+                    .then(data=>{
+                        if(cnt>=data.length){
+                            return;
+                        }
+                        else{
+                            if(cnt<6){
+                                onscroll.cancelBubble=true;
+                                return;
+                            }else{
+                                if(data[cnt].keyword==keyword){
+                                    var container = document.getElementById("itemBox");
+                                    var div = document.createElement("div");
+                                    var img = data[cnt].itemImg;
+                                    var name = data[cnt].itemName;
+                                    var price = data[cnt].price;                                               
+                                    div.className = "imgBox";
+                                    div.innerHTML = "<img src= "+img+">";
+                                    container.appendChild(div);                            
+                                    div.onclick = function(){                    
+                                        this.innerHTML += "["+name+"] price: "+price;                        
+                                    }
+                                    div.onmouseout = function(){                        
+                                        this.innerHTML = "<img src= "+img+">";
+                                    }                                
+                                    cnt++; 
+                                }                                                            
+                            }                        
+                        }
+                    });                    
+                }                 
+            }             
+        }
+
+                    
+        
+    </script>
+</html>

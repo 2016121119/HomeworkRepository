@@ -1,0 +1,117 @@
+[
+    {
+        "itemName":"Molten-BG4500",
+        "tag":"Ball",
+        "price": 73000,
+        "itemImg":"BG4500.PNG",
+        "keyword":"Ball"
+    },
+    {
+        "itemName":"Jordan Legacy",
+        "tag":"Ball",
+        "price": 29720,
+        "itemImg":"Legacy.PNG",
+        "keyword":"Ball"
+    },
+    {
+        "itemName":"Willson Pureshot",
+        "tag":"Ball",
+        "price": 48000,
+        "itemImg":"PureShot.PNG",
+        "keyword":"Ball"
+    },
+    {
+        "itemName":"Spalding Rainbow",
+        "tag":"Ball",
+        "price": 17690,
+        "itemImg":"SpaldingRainBow.PNG",
+        "keyword":"Ball"
+    },
+    {
+        "itemName":"Spalding Lakers",
+        "tag":"Ball",
+        "price": 20810,
+        "itemImg":"SpaldingLakers.PNG",
+        "keyword":"Ball"
+    },
+    {
+        "itemName":"Spalding Marble",
+        "tag":"Ball",
+        "price": 18000,
+        "itemImg":"SpaldingMarble.PNG",
+        "keyword":"Ball"
+    },
+    {
+        "itemName":"FIBA 3X3 Official",
+        "tag":"Ball",
+        "price": 36990,
+        "itemImg":"FIBA3.PNG",
+        "keyword":"Ball"
+    },
+    {
+        "itemName":"Kyrie Low",
+        "tag":"Shoes",
+        "price": 73800,
+        "itemImg":"KyrieRow.PNG",
+        "keyword":"Shoes"
+    },
+    {
+        "itemName":"AT Jumper HighTop",
+        "tag":"Shoes",
+        "price": 32800,
+        "itemImg":"ATJumper.PNG",
+        "keyword":"Shoes"
+    },
+    {
+        "itemName":"Jordan WhyNot?",
+        "tag":"Shoes",
+        "price": 76470,
+        "itemImg":"JordanWhyNot.PNG",
+        "keyword":"Shoes"
+    },
+    {
+        "itemName":"Curry 9",
+        "tag":"Shoes",
+        "price": 90000,
+        "itemImg":"Curry9.PNG",
+        "keyword":"Shoes"
+    },
+    {
+        "itemName":"Training Jersey",
+        "tag":"Jersey",
+        "price": 41100,
+        "itemImg":"TrainingJersey.PNG",
+        "keyword":"Jersey"
+    },
+    {
+        "itemName":"Jordan Training Jersey",
+        "tag":"Jersey",
+        "price": 19800,
+        "itemImg":"JordanJersey.PNG",
+        "keyword":"Jersey"       
+    },
+    {
+        "itemName":"Kobe Lakers Jersey",
+        "tag":"Jersey",
+        "price": 27650,
+        "itemImg":"KobeJersey.PNG",
+        "keyword":"Jersey"        
+    },
+    {
+        "itemName":"ROK Team Jersey",
+        "tag":"Jersey",
+        "price": 24000,
+        "itemImg":"ROKTeamJersey.PNG",
+        "keyword":"Jersey"        
+    },
+    {
+        "itemName":"Light Weight Shooting Jersey",
+        "tag":"Jersey",
+        "price": 24960,
+        "itemImg":"LightWeightJersey.PNG",
+        "keyword":"Jersey"        
+    }
+
+
+]
+
